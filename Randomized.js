@@ -8,7 +8,6 @@ function randomizedArray() {
     const randomArrayItems = ['^', '░', '*'];
     const randomizedArray = Array(3).fill().map(() => Array(3).fill(''));
 
-// Insert random elements except '^' into the array
     randomizedArray.forEach((row, rowIndex) => {
     row.forEach((_, colIndex) => {
         const randomIndex = randomNumber(randomArrayItems.length);
@@ -19,14 +18,13 @@ function randomizedArray() {
             randomizedArray[rowIndex][colIndex] = randomArrayItems[randomIndex];
         }
         if (randomArrayItems[randomIndex] === '^') {
-            randomArrayItems.splice(randomIndex, 1); // Remove '^' from randomArrayItems
+            randomArrayItems.splice(randomIndex, 1); 
         } else if (randomArrayItems[randomIndex] === '*') {
             randomArrayItems.splice(randomIndex, 1);
         }
     });
 });
 
-    // Insert '^' element randomly into the array
     if(randomizedArray.forEach(item => item !== '^')){
         const randomRowIndex = randomNumber(3);
         const randomColIndex = randomNumber(3);
